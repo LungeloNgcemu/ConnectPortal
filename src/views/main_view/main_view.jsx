@@ -6,6 +6,8 @@ import UsersView from '../tab_views/users_view';
 import DetailsView from '../tab_views/details_view';
 import TopMenu from '../../components/top_menu';
 import agent from '../../cores/api/agent';
+import { UserOutlined, MessageOutlined, FileOutlined } from '@ant-design/icons';
+
 
 const MainView = () => {
 
@@ -27,15 +29,20 @@ const MainView = () => {
 
     const items = [
         {
-            label:<div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}> <h4 style={{ fontSize: "1.1rem", fontWeight: "bold", color: "black", marginRight: "10px" }}>Users</h4><Badge color="green" count={usersCount} /></div>,
+            label:<div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}><UserOutlined /> <h4 style={{ fontSize: "1.1rem", fontWeight: "bold", color: "black", marginRight: "10px" }}>Users</h4><Badge color="green" count={usersCount} /></div>,
             key: "1",
             children: <UsersView users={users} />,
         },
-        // {
-        //     label: <h4 style={{ fontSize: "1.1rem", fontWeight: "bold" }}>Details</h4>,
-        //     key: "2",
-        //     children: <DetailsView />,
-        // }
+        {
+            label:<div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}><MessageOutlined /> <h4 style={{ fontSize: "1.1rem", fontWeight: "bold", color: "black", marginRight: "10px" }}>Connect-Chat</h4><Badge color="blue" count={0} /></div>,
+            key: "2",
+            children: <DetailsView />,
+        },
+        {
+            label:<div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}><FileOutlined /> <h4 style={{ fontSize: "1.1rem", fontWeight: "bold", color: "black", marginRight: "10px" }}>Media</h4><Badge color="blue" count={0} /></div>,
+            key: "3",
+            children: <DetailsView />,
+        }
     ]
 
     return (
