@@ -5,9 +5,9 @@ let API_URL = "";
 if (window.location.hostname.includes("localhost")) {
     API_URL = "http://localhost:3000";
 } else if (window.location.hostname.includes("uat")) {
-    API_URL = "http://uat.connect.com";
+    API_URL = "https://uat-backendconnect.onrender.com";
 } else {
-    API_URL = "https://connect.com";
+    API_URL = "https://backendconnect-5zv1.onrender.com";
 }
 
 const api = axios.create({
